@@ -1,0 +1,7 @@
+Running geometry optimization for the carbazole model...
+Converting checkpoint file to fchk format for the small model...
+ Read checkpoint file carbazole_compound_water.chk type G16
+ Write formatted file carbazole_compound_water.fchk
+ FChkPn:  Coordinates translated and rotated.
+ FChkPn:  Coordinates match /B/ after translation and rotation.
+All Gaussian16 calculations completed successfully.

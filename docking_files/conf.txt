@@ -1,0 +1,15 @@
+receptor= clean_dna.pdbqt
+ligand= opt_lig_water.pdbqt
+
+center_x = 15.079
+center_y = 21.044
+center_z = 9.177
+
+size_x= 40
+size_y= 40
+size_z= 40
+
+out=vina_out.pdbqt
+log=logmep.txt
+
+exhaustiveness =8

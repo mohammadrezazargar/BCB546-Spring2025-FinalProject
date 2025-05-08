@@ -12,7 +12,7 @@
 
 # v-- change to your directory, double check that the path is correct
 cd /work/this/here/gmx_MMPBSA
-export MAMBA_ROOT_PREFIX=/work/ratul1/hannah/gmx_MMPBSA/micromamba
+export MAMBA_ROOT_PREFIX=/work/this/here/gmx_MMPBSA/micromamba
 
 module purge
 module load micromamba

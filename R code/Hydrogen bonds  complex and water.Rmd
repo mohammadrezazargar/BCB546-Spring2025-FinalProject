@@ -1,0 +1,113 @@
+---
+title: 'Hbonds: Complex and Water'
+author: "Sristi Dey"
+date: "2025-05-04"
+output: html_document
+---
+
+# Read .xvg files into R
+```{r}
+xvg_files <- list.files(pattern = "\\.xvg$")
+data_list <- lapply(xvg_files, function(file) {
+    # Read all lines
+     all_lines <- readLines(file)
+     
+     # Remove comment lines (@ and #)
+     data_lines <- all_lines[!grepl("^[@#]", all_lines)]
+     
+     # Read the data lines into a data frame
+     df <- read.table(text = data_lines)
+     
+     # Keep only 2 columns (if more exist)
+     df <- df[, 1:2]
+     
+     # Add headers and file name
+     colnames(df) <- c("Time", "HBonds")
+     df$File <- basename(file)
+     return(df)
+ })
+
+combined_data <- do.call(rbind, data_list)
+
+```
+
+#Load package
+```{r}
+library(ggplot2)
+```
+# Create a custom mapping for files and names
+```{r}
+file_name_mapping <- c(
+  "hbond_complex_water_amber03.xvg" = "AMBER03",
+  "hbond_complex_water_amber94.xvg" = "AMBER94",
+  "hbond_complex_water_amber96.xvg" = "AMBER96",
+  "hbond_complex_water_amber99.xvg" = "AMBER99",
+  "hbond_complex_water_amber99sb-idln.xvg" = "AMBER99SB-Idln",
+  "hbond_complex_water_amber99sb.xvg" = "AMBER99SB",
+  "hbond_complex_water_ambergs.xvg" = "AMBER-GS"
+)
+```
+ 
+# Define corresponding colors for each custom name
+```{r}
+colors_mapping <- c(
+     "AMBER03" = "black",
+     "AMBER94" = "brown",
+     "AMBER96" = "limegreen",
+     "AMBER99" = "blue",
+     "AMBER99SB-Idln" = "gold",
+     "AMBER99SB" = "gray",
+     "AMBER-GS" = "pink"
+ )
+```
+
+# Replace the file names in the 'File' column based on the mapping
+```{r}
+combined_data$File <- sapply(combined_data$File, function(x) {
+     if (x %in% names(file_name_mapping)) {
+         return(file_name_mapping[x])  # Replace with custom name
+     } else {
+         return(x)  # Keep the original name if it's not in the mapping
+     }
+ })
+```
+ 
+# Assign colors to each file based on the custom names
+```{r}
+combined_data$FileColor <- sapply(combined_data$File, function(x) {
+  if (x %in% names(colors_mapping)) {
+    return(colors_mapping[x])  # Assign the color from the mapping
+  } else {
+    return("gray")  # Default color if file isn't in the mapping
+  }
+})
+```
+
+# Reorder factor levels for the 'File' column:
+```{r}
+combined_data$File <- factor(combined_data$File, levels = c(
+  "AMBER03", "AMBER94", "AMBER96", "AMBER99", "AMBER99SB-Idln", "AMBER99SB", "AMBER-GS"
+))
+```
+  
+#Scatter plot of Hydrogen Bonds: Complex and Water - Smooth Trend
+```{r}
+ggplot(combined_data, aes(x = Time, y = HBonds, color = File)) +
+     geom_point(size = 0.75, alpha = 0.65) +
+     scale_color_manual(values = colors_mapping) +
+     labs(
+         title = "Hydrogen Bonds: Complex and Water",
+         x = "Time (ps)",
+         y = "Number of HBonds",
+         color = NULL  # Removes the legend title
+     ) +
+     theme_minimal() +
+     theme(
+         plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+         axis.title = element_text(size = 12, face = "bold"),
+         axis.text = element_text(size = 10),
+         legend.title = element_blank(),
+         legend.text = element_text(size = 10)
+     )
+```
+

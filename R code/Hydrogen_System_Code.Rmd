@@ -1,0 +1,91 @@
+---
+title: "Script"
+output: html_document
+date: "2025-05-05"
+---
+
+```   {r cars}
+
+library(ggplot2)
+library(dplyr)
+library(showtext)
+ 
+#Times New Roman via showtext
+ font_add(
+     family     = "Times New Roman",
+     regular    = "C:/Windows/Fonts/times.ttf",
+     bold       = "C:/Windows/Fonts/timesbd.ttf",
+     italic     = "C:/Windows/Fonts/timesi.ttf",
+     bolditalic = "C:/Windows/Fonts/timesbi.ttf"
+ )
+ showtext_auto()
+ 
+ #combine data read for all .xvg files
+ read_xvg <- function(path) {
+     lines    <- readLines(path)
+     data_raw <- lines[!grepl("^[#@]", lines)]
+     df       <- read.table(text = data_raw, header = FALSE)
+     return(df)
+ }
+ 
+ file_paths <- c(
+     "hbond_system_amber03.xvg",
+     "hbond_system_amber94.xvg",
+     "hbond_system_amber96.xvg",
+     "hbond_system_amber99.xvg",
+     "hbond_system_amber99sb-idln.xvg",
+     "hbond_system_amber99sb.xvg",
+     "hbond_system_ambergs.xvg"
+ )
+ 
+ #sorting data and creating a column for use in legend name 
+ combined_df <- lapply(file_paths, function(fp) {
+     df <- read_xvg(fp)
+     names(df) <- c("time_ps", "number_of_hydrogen_bonds")
+     df$file   <- basename(fp)
+     df
+ }) %>%
+     bind_rows() %>%
+     mutate(
+         ff = toupper(sub(".*_","", sub("\\.xvg$","", file))),
+         ff = factor(
+             ff,
+             levels = toupper(sub(".*_","", sub("\\.xvg$","", basename(file_paths))))
+         )
+     )
+ 
+ #Plot as a scatterplot 
+ ggplot(combined_df,
+        aes(x = time_ps,
+            y = number_of_hydrogen_bonds,
+            color = ff)) +
+     geom_point(size = 0.75) +    
+     scale_color_manual(
+         values = c(
+             "black",     # AMBER03
+             "brown",     # AMBER94
+             "limegreen", # AMBER96
+             "blue",      # AMBER99
+             "gold",      # AMBER99SB-IDLN
+             "gray",      # AMBER99SB
+             "pink"       # AMBERGS
+         )
+     ) +
+     labs(
+         title = "Hydrogen Bonds: System",
+         x     = "Time (ps)",
+         y     = "Number of  Hydrogen Bonds",
+         color = "Force Field"
+     ) +
+     theme_minimal() +
+     theme(
+         plot.title   = element_text(family = "Times New Roman", size = 14, hjust = 0.5),
+         axis.title   = element_text(family = "Times New Roman", size = 10),
+         axis.text    = element_text(family = "Times New Roman", size = 10),
+         legend.title = element_text(family = "Times New Roman", size = 10),
+         legend.text  = element_text(family = "Times New Roman", size = 10)
+     )
+
+
+```
+

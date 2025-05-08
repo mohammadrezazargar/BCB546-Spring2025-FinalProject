@@ -7,11 +7,11 @@
 #SBATCH --gres=gpu:a100:1
 #SBATCH --output="amber.out" # job standard output file (%j replaced by job id)
 #SBATCH --error="amber.err" # job standard error file (%j replaced by job id)
-#SBATCH --mail-user=hgates@iastate.edu 
+#SBATCH --mail-user=[insert email] 
 #SBATCH --mail-type=BEGIN,END,FAIL
 
 # v-- change to your directory, double check that the path is correct
-cd /work/ratul1/hannah/gmx_MMPBSA
+cd /work/this/here/gmx_MMPBSA
 export MAMBA_ROOT_PREFIX=/work/ratul1/hannah/gmx_MMPBSA/micromamba
 
 module purge
@@ -20,7 +20,7 @@ module load micromamba
 micromamba env create -n amber_env python=3.11 ambertools=23.3 -c conda-forge -y
 
 eval "$(micromamba shell hook --shell=bash)"
-export MAMBA_ROOT_PREFIX=/work/ratul1/hannah/gmx_MMPBSA/micromamba
+export MAMBA_ROOT_PREFIX=/work/this/here/gmx_MMPBSA/micromamba
 micromamba env list
 micromamba activate amber_env
 

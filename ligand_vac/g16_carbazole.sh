@@ -4,7 +4,7 @@
 #SBATCH -N 1
 #SBATCH --ntasks=1        # Number of tasks
 #SBATCH --mem=64GB        # Memory request
-#SBATCH --mail-user=hgates@iastate.edu   # email address
+#SBATCH --mail-user=[insert email]
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
 

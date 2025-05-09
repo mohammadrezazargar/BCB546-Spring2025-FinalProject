@@ -35,7 +35,7 @@ Each directory includes all the MD information for each forcefield tested where 
     - MD set up and production run > full_jobscript.sh
     - MD analysis > sys_analysis.sh
 + Output MD System Information with updated coordinates and trajectories
-+ Final anlysis of MD: RMSD, RMSF, Radius of Gyration, and Hydrogen Bonding in .xvg format
++ Final analysis of MD: RMSD, RMSF, Radius of Gyration, and Hydrogen Bonding in .xvg format
 
 ### **System Analysis**:
 Graphing the .xvg data was performed using Python and R. The raw data in .xvg format can be found in *"data_analysis"*. Additionally, within this directory there is ...

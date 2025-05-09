@@ -3,6 +3,7 @@
 This project is based on the study performed by __[Misra, Manas, and Anil Kumar Yadav. "Assessment of available AMBER force fields to model DNA-ligand interactions." Biointerface Res. Appl. Chem 13 (2022): 156.](https://biointerfaceresearch.com/wp-content/uploads/2022/03/BRIAC132.156.pdf)__
 
 We provide a comprehensive methodolgy for performing Molecular Dynamics (MD) simulations utilizing various different Amber embedded forecfields that are in the GROMACS software for a DNA-small moelcule system. Although this project is built to be executed using HPC, it can easily be adapted to your local machine.
+The full methodology can be found in  the powerpoint *"Presentation.pptx"* where the materials and methods are described along with a comparison of our current grpah results and the papers resultant graphs.
 
 ### **Necessary Software/ Packages**:
 + AmberTools

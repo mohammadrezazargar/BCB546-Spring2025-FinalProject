@@ -22,12 +22,14 @@ DFT Calculations were performed on a carbazole derivative both in vaccuum and in
 + These directories contain the functional and basis set utilized for this project as well as a batch script to run the job.
 
 ### **Docking Information**:
-The docking results can be found in "docking_files".
+The docking results can be found in *"docking_files"*.
 + This directory contains the docking scores from AutoDock4 and the parameters used to dock the ligand to DNA
 + Contains the final docked complex in .pdbqt format
 
 ### **MD Simulations**:
-MD data will be found in "md_sims" directory which includes all the MD information for each forcefield testing where each forcefield folder is labeled accordingly. Each folder within this directory contains >>>
+Due to space limitations in github, ***all*** MD related data is located in a external google drive where can be downloaded via .zip file.
++ Data Availability >>> Molecular Dynamics Simulations __[Full Dataset](https://drive.google.com/drive/folders/1CRN-luRf_2fc7RL20XiKStWz-GhJgUZv?usp=sharing)__.
+Each directory includes all the MD information for each forcefield tested where each forcefield folder is labeled to their respective forcefield. Each folder within this directory contains >>>
 + Batch Scripts for ...
     - Paramterization of ligand and DNA > ff_param.sh
     - MD set up and production run > full_jobscript.sh
@@ -36,10 +38,8 @@ MD data will be found in "md_sims" directory which includes all the MD informati
 + Final anlysis of MD: RMSD, RMSF, Radius of Gyration, and Hydrogen Bonding in .xvg format
 
 ### **System Analysis**:
-Graphing the .xvg data was performed using Python and R. The raw data in .xvg format can be found in "data_analysis". Additionally, within this directory there is ...
+Graphing the .xvg data was performed using Python and R. The raw data in .xvg format can be found in *"data_analysis"*. Additionally, within this directory there is ...
 + "codes" File: This folder contains all codes utilized to produce the necessay plots
 + "plots" File: This folder contains all the plots in .png format
 
-Due to space limitations in github, ***all*** MD related data is located in a external google drive where can be downloaded via .zip file.
-+ Data Availability >>> Molecular Dynamics Simulations __[Full Dataset](https://drive.google.com/drive/folders/1CRN-luRf_2fc7RL20XiKStWz-GhJgUZv?usp=sharing)__
 

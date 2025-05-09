@@ -11,14 +11,14 @@ We provide a comprehensive methodolgy for performing Molecular Dynamics (MD) sim
 + GROMACS
 
 ### **Amber Environment**:
-For HPC, we provide a batch script that builds a AmberTools environment using micromamba to allow for additional packages to be installed. This script is called "amber_env.sh"
+For HPC, we provide a batch script that builds a AmberTools environment using micromamba to allow for additional packages to be installed. This script is called *"amber_env.sh"*
 
 ### **Ligand Data**:
-The starting ligand structure (.pdb, .mol, & .txt format) and the final docked pose can be found in "complex_info".
+The starting ligand structure (.pdb, .mol, & .txt format) and the final docked pose can be found in *"complex_info"*.
 
 ### **DFT Data**:
 DFT Calculations were performed on a carbazole derivative both in vaccuum and in water. 
-+ This data can be found in "ligand_water" and "ligand_vac".
++ This data can be found in *"ligand_water"* and *"ligand_vac"*.
 + These directories contain the functional and basis set utilized for this project as well as a batch script to run the job.
 
 ### **Docking Information**:

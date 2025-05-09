@@ -43,4 +43,4 @@ Graphing the .xvg data was performed using Python and R. The raw data in .xvg fo
 + "codes" File: This folder contains all codes utilized to produce the necessay plots
 + "plots" File: This folder contains all the plots in .png format
 
-
+Through our project, we were able to determine what forcefield performed poorly for this ligand-DNA system as well as found what forcefield performed well.

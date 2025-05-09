@@ -28,7 +28,7 @@ The docking results can be found in *"docking_files"*.
 
 ### **MD Simulations**:
 Due to space limitations in github, ***all*** MD related data is located in a external google drive where can be downloaded via .zip file.
-+ Data Availability >>> Molecular Dynamics Simulations __[Full Dataset](https://drive.google.com/drive/folders/1CRN-luRf_2fc7RL20XiKStWz-GhJgUZv?usp=sharing)__.
+*Data Availability*: Molecular Dynamics Simulations __[Full Dataset](https://drive.google.com/drive/folders/1CRN-luRf_2fc7RL20XiKStWz-GhJgUZv?usp=sharing)__.
 Each directory includes all the MD information for each forcefield tested where each forcefield folder is labeled to their respective forcefield. Each folder within this directory contains >>>
 + Batch Scripts for ...
     - Paramterization of ligand and DNA > ff_param.sh

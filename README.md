@@ -41,5 +41,5 @@ Graphing the .xvg data was performed using Python and R. The raw data in .xvg fo
 + "plots" File: This folder contains all the plots in .png format
 
 Due to space limitations in github, all MD related data is located in a external google drive where can be downloaded via .zip file.
-+ Data Availability >>> Molecular Dynamics Simulations Full __[Dataset](https://drive.google.com/drive/folders/1CRN-luRf_2fc7RL20XiKStWz-GhJgUZv?usp=sharing)__
++ Data Availability >>> Molecular Dynamics Simulations __[Full Dataset](https://drive.google.com/drive/folders/1CRN-luRf_2fc7RL20XiKStWz-GhJgUZv?usp=sharing)__
 

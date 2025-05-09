@@ -1,4 +1,4 @@
-# BCB_Final_Project
+# BCB 546 Final Project
 
 This project is based on the study performed by Misra, Manas, and Anil Kumar Yadav. "Assessment of available AMBER force fields to model DNA-ligand interactions." Biointerface Res. Appl. Chem 13 (2022): 156. 
 
@@ -10,7 +10,7 @@ We provide a comprehensive methodolgy for performing Molecular Dynamics (MD) sim
 + Any software to perform geometry optimization
 + GROMACS
 
-### **Amber Environemt**:
+### **Amber Environment**:
 For HPC, we provide a batch script that builds a AmberTools environment using micromamba to allow for additional packages to be installed. This script is called "amber_env.sh"
 
 ### **Ligand Data**:
@@ -40,6 +40,6 @@ Graphing the .xvg data was performed using Python and R. The raw data in .xvg fo
 + "codes" File: This folder contains all codes utilized to produce the necessay plots
 + "plots" File: This folder contains all the plots in .png format
 
-Due to space limitations in github, all MD related data is located in a external google drive where can be downloaded via .zip file.
+Due to space limitations in github, ***all*** MD related data is located in a external google drive where can be downloaded via .zip file.
 + Data Availability >>> Molecular Dynamics Simulations __[Full Dataset](https://drive.google.com/drive/folders/1CRN-luRf_2fc7RL20XiKStWz-GhJgUZv?usp=sharing)__
 

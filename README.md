@@ -14,7 +14,7 @@ Amber Environemt:
 For HPC, we provide a batch script that builds a AmberTools environment using micromamba to allow for additional packages to be installed. This script is called "amber_env.sh"
 
 Ligand Data:
-The starting ligand structure (.pdb, .mol, & .txt format) can be found in "complex_info".
+The starting ligand structure (.pdb, .mol, & .txt format) and the final docked pose can be found in "complex_info".
 
 DFT Calculations were performed on a carbazole derivative both in vaccuum and in water. 
 + This data can be found in "ligand_water" and "ligand_vac".
@@ -26,7 +26,7 @@ The docking results can be found in "docking_files".
 + Contains the final docked complex in .pdbqt format
 
 MD Simulations:
-MD data will be founf in "md_sims" directory which includes all the MD information for each forcefield testing where each forcefield folder is labeled accordingly. Each folder within this directory contains >>>
+MD data will be found in "md_sims" directory which includes all the MD information for each forcefield testing where each forcefield folder is labeled accordingly. Each folder within this directory contains >>>
 + Batch Scripts for ...
     - Paramterization of ligand and DNA > ff_param.sh
     - MD set up and production run > full_jobscript.sh
